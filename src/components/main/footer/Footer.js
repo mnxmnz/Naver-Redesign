@@ -1,7 +1,14 @@
 import React from 'react';
+import MainCard from '../footer/MainCard';
 
 function Footer() {
-  return <div>Main - Footer</div>;
+  return (
+    <footerWrap>
+      <div>Main - Footer - bar</div>
+      <MainCard />
+      <div>Main - Footer </div>
+    </footerWrap>
+  );
 }
 
 export default Footer;

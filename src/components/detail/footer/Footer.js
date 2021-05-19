@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import DetailCard from '../footer/DetailCard';
 
 function Footer() {
   return (
     <FooterWrap>
+      <DetailCard />
       <div>Detail - Footer</div>
     </FooterWrap>
   );
