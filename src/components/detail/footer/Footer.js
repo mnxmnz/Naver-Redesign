@@ -9,28 +9,50 @@ function Footer() {
     /*임의로 20개의 데이터를 넣음*/
   }
   const cardData = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
+  const footerData = [
+    '회사소개',
+    '인재채용',
+    '제휴제안',
+    '이용약관',
+    '개인정보처리방침',
+    '청소년보호정책',
+    '네이버 정책',
+    '고객센터',
+  ];
   return (
     <FooterWrap>
       <div className="introduce">
-        <div className="introduce--title">스포츠 영상</div>
+        <div className="introduce--title bold">스포츠 영상</div>
         <div className="introduce--detail">주제별로 분류된 다양한 영상 모음</div>
       </div>
       {/* 4*5 grid 틀에 map 돌려서 DetailCard 넣기*/}
       <CardList>{cardData && cardData.map(() => <DetailCard />)}</CardList>
-      {/* margin-top에 -값 주거나 해서 잘 올려보기*/}
       <div className="more">
         <img src={PlusBtn} className="more--button" />
         <div className="more--text">새로운 글 더보기</div>
       </div>
       <div className="footer">
+        <div className="footer--first">
+          <span className="footer--first--element">회사소개</span>
+          <span className="footer--first--element">인재채용</span>
+          <span className="footer--first--element">제휴제안</span>
+          <span className="footer--first--element">이용약관</span>
+          <span className="footer--first--element bold">개인정보처리방침</span>
+          <span className="footer--first--element">청소년보호정책</span>
+          <span className="footer--first--element">네이버 정책</span>
+          <span className="footer--first--element">고객센터</span>
+        </div>
         <div className="footer--second">
           본 콘텐츠의 저작권은 네이버 및 제공처에 있으며, 이를 이용하는 경우 저작권법 등에 따라
           법적책임을 질 수 있습니다.
         </div>
         <div className="footer--last">
-          {/* 배열 map으로 돌면서 그리도록 .. 각각에 제어권 부여하기 위해서  */}
           <img src={NaverIcon} className="footer--last--navericon" />
-          <div className="footer--last--">Copyright ⓒ NAVER Corp. All Rights Reserved.</div>
+          <div className="footer--last--copyright">
+            <span>Copyright </span>
+            <span className="bold">ⓒ NAVER corp. </span>
+            <span>All Rights Reserved.</span>
+          </div>
         </div>
       </div>
     </FooterWrap>
@@ -48,6 +70,10 @@ const FooterWrap = styled.div`
     padding-left: ${({ theme }) => theme.tabletPadding.detailFooter};
     padding-right: ${({ theme }) => theme.tabletPadding.detailFooter};
   }
+
+  .bold {
+    font-weight: bold;
+  }
   .introduce {
     width: 120rem;
     height: 2.3rem;
@@ -58,7 +84,6 @@ const FooterWrap = styled.div`
       width: 8.3rem;
       height: 2.3rem;
       font-style: normal;
-      font-weight: bold;
       font-size: 1.9rem;
       line-height: 2.3rem;
       letter-spacing: -0.05em;
@@ -97,6 +122,62 @@ const FooterWrap = styled.div`
       color: ${({ theme }) => theme.text.textBlack};
     }
   }
+  .footer {
+    width: 100vw;
+    margin: 0;
+    height: 27.2rem;
+    margin-top: 12.2rem;
+    background: ${({ theme }) => theme.box.boxBg};
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &--first {
+      display: flex;
+      height: 1.5rem;
+      margin-bottom: 1.2rem;
+      &--element {
+        cursor: pointer;
+        padding-right: 0.7rem;
+        padding-left: 0.7rem;
+        border-right: 0.1rem solid ${({ theme }) => theme.text.textBlack};
+        font-size: 1.5rem;
+        line-height: 1.8rem;
+        letter-spacing: -0.02em;
+        color: ${({ theme }) => theme.text.textBlack};
+      }
+    }
+    &--second {
+      font-size: 1.3rem;
+      line-height: 1.6rem;
+      /* identical to box height */
+      letter-spacing: -0.02em;
+      /* text/text_sub */
+      margin-bottom: 1.6rem;
+
+      color: ${({ theme }) => theme.text.textSub};
+    }
+    &--last {
+      display: flex;
+      width: 42.1rem;
+      height: 2.2rem;
+      align-items: center;
+      &--navericon {
+        width: 6.501rem;
+        height: 1.224rem;
+      }
+      &--copyright {
+        /* 박효리/15/15_sub2_title_eng */
+        margin-left: 1.899rem;
+        font-family: Helvetica;
+        font-weight: 300;
+        font-size: 1.5rem;
+        line-height: 2.2rem;
+        letter-spacing: 0.02em;
+        color: ${({ theme }) => theme.text.textBlack};
+      }
+    }
+  }
 `;
 
 const CardList = styled.div`
@@ -105,6 +186,6 @@ const CardList = styled.div`
   row-gap: 2.485rem;
   column-gap: 2.39rem;
   padding-bottom: 3.507rem;
-  border-bottom: 2px solid lightgray;
+  border-bottom: 0.1rem solid ${({ theme }) => theme.main.mainNaverLightgray};
 `;
 export default Footer;
