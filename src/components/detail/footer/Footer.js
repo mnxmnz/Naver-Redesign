@@ -58,13 +58,8 @@ const FooterWrap = styled.div`
       font-weight: bold;
       font-size: 1.9rem;
       line-height: 2.3rem;
-      /* identical to box height */
-
       letter-spacing: -0.05em;
-
-      /* text_black */
-
-      color: #202020;
+      color: ${({ theme }) => theme.text.textBlack};
     }
     &--detail {
       width: 19.5rem;
@@ -75,13 +70,8 @@ const FooterWrap = styled.div`
       font-size: 1.5rem;
       line-height: 1.8rem;
       text-align: center;
-      /* identical to box height */
-
-      letter-spacing: -0.02rem;
-
-      /* text_black */
-
-      color: #202020;
+      letter-spacing: -0.02em;
+      color: ${({ theme }) => theme.text.textBlack};
       margin-left: 92.3rem;
     }
   }
