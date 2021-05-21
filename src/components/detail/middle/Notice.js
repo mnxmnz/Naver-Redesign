@@ -12,7 +12,7 @@ function Notice() {
 }
 
 const NoticeWrap = styled.div`
-  width: 100%;
+  width: 120rem;
   height: 6rem;
   margin-top: 6rem;
   display: flex;

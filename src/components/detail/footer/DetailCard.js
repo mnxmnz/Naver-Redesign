@@ -9,7 +9,7 @@ function DetailCard() {
     <DetailCardWrap>
       <div className="card--top">
         <figure className="card--top__cardimage">
-          <img src={PlayIcon} className="card--top__playicon" />
+          <img src={PlayIcon} className="card--top__playicon" alt="" />
           <div className="card--top__time">05:45</div>
         </figure>
       </div>
