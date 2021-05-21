@@ -9,16 +9,7 @@ function Footer() {
     /*임의로 20개의 데이터를 넣음*/
   }
   const cardData = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
-  const footerData = [
-    '회사소개',
-    '인재채용',
-    '제휴제안',
-    '이용약관',
-    '개인정보처리방침',
-    '청소년보호정책',
-    '네이버 정책',
-    '고객센터',
-  ];
+
   return (
     <FooterWrap>
       <div className="introduce">
