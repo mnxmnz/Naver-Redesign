@@ -13,8 +13,8 @@ function Footer() {
   return (
     <FooterWrap>
       <div className="introduce">
-        <div className="introduce--title bold">스포츠 영상</div>
-        <div className="introduce--detail">주제별로 분류된 다양한 영상 모음</div>
+        <div className="introduce__title bold">스포츠 영상</div>
+        <div className="introduce__detail">주제별로 분류된 다양한 영상 모음</div>
       </div>
       {/* 4*5 grid 틀에 map 돌려서 DetailCard 넣기*/}
       <CardList>{cardData && cardData.map(() => <DetailCard />)}</CardList>
@@ -24,22 +24,22 @@ function Footer() {
       </div>
       <div className="footer">
         <div className="footer--first">
-          <span className="footer--first--element">회사소개</span>
-          <span className="footer--first--element">인재채용</span>
-          <span className="footer--first--element">제휴제안</span>
-          <span className="footer--first--element">이용약관</span>
-          <span className="footer--first--element bold">개인정보처리방침</span>
-          <span className="footer--first--element">청소년보호정책</span>
-          <span className="footer--first--element">네이버 정책</span>
-          <span className="footer--first--element">고객센터</span>
+          <span className="footer--first__element">회사소개</span>
+          <span className="footer--first__element">인재채용</span>
+          <span className="footer--first__element">제휴제안</span>
+          <span className="footer--first__element">이용약관</span>
+          <span className="footer--first__element bold">개인정보처리방침</span>
+          <span className="footer--first__element">청소년보호정책</span>
+          <span className="footer--first__element">네이버 정책</span>
+          <span className="footer--first__element">고객센터</span>
         </div>
         <div className="footer--second">
           본 콘텐츠의 저작권은 네이버 및 제공처에 있으며, 이를 이용하는 경우 저작권법 등에 따라
           법적책임을 질 수 있습니다.
         </div>
         <div className="footer--last">
-          <img src={NaverIcon} className="footer--last--navericon" />
-          <div className="footer--last--copyright">
+          <img src={NaverIcon} className="footer--last__navericon" />
+          <div className="footer--last__copyright">
             <span>Copyright </span>
             <span className="bold">ⓒ NAVER corp. </span>
             <span>All Rights Reserved.</span>
@@ -71,7 +71,7 @@ const FooterWrap = styled.div`
     display: flex;
     align-items: center;
     margin-bottom: 1.1rem;
-    &--title {
+    &__title {
       width: 8.3rem;
       height: 2.3rem;
       font-style: normal;
@@ -80,7 +80,7 @@ const FooterWrap = styled.div`
       letter-spacing: -0.05em;
       color: ${({ theme }) => theme.text.textBlack};
     }
-    &--detail {
+    &__detail {
       width: 19.5rem;
       height: 1.8rem;
       font-family: Apple SD Gothic Neo;
@@ -127,7 +127,7 @@ const FooterWrap = styled.div`
       display: flex;
       height: 1.5rem;
       margin-bottom: 1.2rem;
-      &--element {
+      &__element {
         cursor: pointer;
         padding-right: 0.7rem;
         padding-left: 0.7rem;
@@ -153,12 +153,11 @@ const FooterWrap = styled.div`
       width: 42.1rem;
       height: 2.2rem;
       align-items: center;
-      &--navericon {
+      &__navericon {
         width: 6.501rem;
         height: 1.224rem;
       }
-      &--copyright {
-        /* 박효리/15/15_sub2_title_eng */
+      &__copyright {
         margin-left: 1.899rem;
         font-family: Helvetica;
         font-weight: 300;
