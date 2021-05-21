@@ -5,9 +5,7 @@ import NaverIcon from '../../../assets/icons/NaverIcon.svg';
 import PlusBtn from '../../../assets/icons/PlusBtn.svg';
 
 function Footer() {
-  {
-    /*임의로 20개의 데이터를 넣음*/
-  }
+  /*임의로 20개의 데이터를 넣음*/
   const cardData = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
 
   return (

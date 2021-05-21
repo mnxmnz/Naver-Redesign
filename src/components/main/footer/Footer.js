@@ -14,28 +14,30 @@ function Footer() {
         <span className="intro__count-num">1,801</span>
         <span className="intro__count-text">개의 글</span>
         <span className="intro__setting">관심주제 설정</span>
-        <img src={SettingIcon} className="intro__setting-icon" x />
+        <img src={SettingIcon} className="intro__setting-icon" />
       </div>
+
       <div className="menu-container">
         <img src={LeftButton} className="menu__left-button" />
         <div className="menu">
-          <div className="menu__entertain">엔터</div>
-          <div className="menu__sport">스포츠</div>
-          <div className="menu__car">자동차</div>
-          <div className="menu__webtoon">웹툰</div>
-          <div className="menu__economy">경제M</div>
-          <div className="menu__recipe">레시피</div>
-          <div className="menu__game">게임</div>
-          <div className="menu__movie">영화</div>
+          <div className="menu__elem">엔터</div>
+          <div className="menu__elem">스포츠</div>
+          <div className="menu__elem">자동차</div>
+          <div className="menu__elem">웹툰</div>
+          <div className="menu__elem">경제M</div>
+          <div className="menu__elem">레시피</div>
+          <div className="menu__elem">게임</div>
+          <div className="menu__elem">영화</div>
         </div>
         <img src={RightButton} className="menu__right-button" />
       </div>
+
       <div className="detail-card">
         {/* map돌려서 detailCard에서 3개 불러올 예정 -> grid 이용 , 값으로 보낼 것 ) 이미지 사이즈 , 카테고리 + 폰트 사이즈 , 제목 + 폰트 사이즈, 메뉴 + 폰트사이즈 */}
       </div>
       <div className="more">
         <img src={RightButton} className="more--button" />
-        <div className="more--text">모든 스포프 더보기</div>
+        <div className="more--text">모든 스포츠 더보기</div>
       </div>
       <div className="footer">
         <div className="footer--info">공지사항</div>
@@ -78,66 +80,92 @@ function Footer() {
 export default Footer;
 
 const FooterWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   .intro {
+    width: 120rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
     &__first {
       font-weight: bold;
-      font-size: 19px;
-      line-height: 23px;
+      width: 13.9rem;
+      font-size: 1.9rem;
+      /* line-height: 2.3rem; */
       letter-spacing: -0.05em;
-
-      /* text/text_black */
-
-      color: #202020;
+      margin-right: 1.8rem;
+      color: ${({ theme }) => theme.text.textBlack};
     }
     &__second {
-      font-size: 15px;
-      line-height: 18px;
-      /* identical to box height */
-
+      width: 20rem;
+      font-size: 1.5rem;
       letter-spacing: -0.02em;
-
-      /* text/text_black */
-
-      color: #202020;
+      margin-right: 63rem;
+      color: ${({ theme }) => theme.text.textBlack};
     }
     &__count-num {
+      width: 3.3rem;
       font-weight: bold;
-      font-size: 16px;
-      line-height: 24px;
-      /* identical to box height, or 150% */
-
+      font-size: 1.6rem;
       text-align: right;
       letter-spacing: -0.05em;
-
-      /* text/text_black */
-
-      color: #202020;
+      margin-right: 0.4rem;
+      color: ${({ theme }) => theme.text.textBlack};
     }
     &__count-text {
-      font-size: 15px;
-      line-height: 18px;
-      /* identical to box height */
-
+      width: 7.2rem;
+      font-size: 1.5rem;
       letter-spacing: -0.02em;
-
-      /* text/text_sub */
-
-      color: #8c8c8c;
+      padding-right: 1.6rem;
+      border-right: 1px solid ${({ theme }) => theme.main.mainNaverLightgray};
+      color: ${({ theme }) => theme.text.textSub};
     }
     &__setting {
-      font-size: 15px;
-      line-height: 18px;
-      /* identical to box height */
-
+      width: 9.3rem;
+      font-size: 1.5rem;
       letter-spacing: -0.02em;
-
-      /* text/text_sub */
-
-      color: #8c8c8c;
+      margin-left: 1.6rem;
+      color: ${({ theme }) => theme.text.textSub};
     }
     &__setting-icon {
-      width: 18px;
-      height: 18px;
+      margin-left: 0.4rem;
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+  .menu-container {
+    width: 120rem;
+    height: 8rem;
+    position: relative;
+    margin-top: 2.2rem;
+  }
+  .menu {
+    width: 114.2rem;
+    height: 8rem;
+    display: flex;
+    border: 0.1rem solid ${({ theme }) => theme.main.mainNaverLightgray};
+    margin-left: 2.9rem;
+    &__elem {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.6rem;
+      letter-spacing: -0.05em;
+      color: ${({ theme }) => theme.text.textBlack};
+      border-right: 0.1rem solid ${({ theme }) => theme.main.mainNaverLightgray};
+    }
+    &__left-button {
+      position: absolute;
+      bottom: 0.6rem;
+    }
+    &__right-button {
+      position: absolute;
+      right: 0rem;
+      bottom: 0.6rem;
     }
   }
 `;
