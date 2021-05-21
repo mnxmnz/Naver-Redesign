@@ -34,6 +34,10 @@ const tabletPadding = {
   detailFooter: '4vw;',
 };
 
+const box = {
+  boxBg: '#F8F9FB',
+};
+
 const theme = {
   searchBanner,
   background,
@@ -41,6 +45,7 @@ const theme = {
   main,
   pcPadding,
   tabletPadding,
+  box,
 };
 
 export default theme;
