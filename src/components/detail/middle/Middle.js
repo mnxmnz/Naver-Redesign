@@ -20,11 +20,7 @@ export default Middle;
 
 const MiddleWrap = styled.div`
   margin-top: 1.8rem;
-  padding-left: ${({ theme }) => theme.pcPadding.detail};
-  padding-right: ${({ theme }) => theme.pcPadding.detail};
-
-  @media (max-width: 1200px) {
-    padding-left: ${({ theme }) => theme.tabletPadding.detailMiddle};
-    padding-right: ${({ theme }) => theme.tabletPadding.detailMiddle};
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
