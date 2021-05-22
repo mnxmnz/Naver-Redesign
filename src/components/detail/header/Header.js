@@ -68,7 +68,7 @@ function Header() {
           <div className="main__banner--description">
             <h2>핫뉴스</h2>
             <h1>
-              SON보다 더한 '양발잡이'가 나타
+              SON보다 더한 '양발잡이'가 나타났다...
               <br />
               30골 중 '왼발 15골-오른발 15골'
             </h1>
@@ -230,8 +230,8 @@ const HeaderWrap = styled.div`
       }
 
       &--description {
-        width: 45.6rem;
-        margin-left: 1.5rem;
+        width: 46rem;
+        margin-left: 1.1rem;
 
         h2 {
           font-size: 2.4rem;
