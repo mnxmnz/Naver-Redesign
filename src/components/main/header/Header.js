@@ -1,9 +1,10 @@
 import React from 'react';
+import HeaderMenu from './HeaderMenu.js';
 
 function Header() {
   return (
     <>
-      <div>Main - Header</div>
+      <HederMenu />
     </>
   );
 }
