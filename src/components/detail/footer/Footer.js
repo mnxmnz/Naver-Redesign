@@ -29,7 +29,7 @@ function Footer() {
           <span className="footer--first__element bold">개인정보처리방침</span>
           <span className="footer--first__element">청소년보호정책</span>
           <span className="footer--first__element">네이버 정책</span>
-          <span className="footer--first__element">고객센터</span>
+          <span className="footer--first__lastelement">고객센터</span>
         </div>
         <div className="footer--second">
           본 콘텐츠의 저작권은 네이버 및 제공처에 있으며, 이를 이용하는 경우 저작권법 등에 따라
@@ -130,6 +130,15 @@ const FooterWrap = styled.div`
         padding-right: 0.7rem;
         padding-left: 0.7rem;
         border-right: 0.1rem solid ${({ theme }) => theme.text.textBlack};
+        font-size: 1.5rem;
+        line-height: 1.8rem;
+        letter-spacing: -0.02em;
+        color: ${({ theme }) => theme.text.textBlack};
+      }
+      &__lastelement {
+        cursor: pointer;
+        padding-right: 0.7rem;
+        padding-left: 0.7rem;
         font-size: 1.5rem;
         line-height: 1.8rem;
         letter-spacing: -0.02em;
