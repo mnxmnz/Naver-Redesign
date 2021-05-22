@@ -6,6 +6,20 @@ import RightButton from '../../../assets/icons/RightButton.svg';
 import styled from 'styled-components';
 
 function Footer() {
+  // 임의의 데이터 넣기 -> 서버 연결하면 데이터 받아서 넣기
+  const cardData = {
+    allWidth: '37.8rem',
+    cardHeight: '48.8rem',
+    imageHeight: '37.8rem',
+    kindFontSize: '1.6rem',
+    titleFontSize: '1.6rem',
+    categoryFontSize: '1.5rem',
+    /*임의의 데이터 넣음*/
+    kind: '구단특집',
+    title: '[IUFC TV] 3 - 1 승리! 원정 첫 승리를 팬분들께 바칩니다!  승리의 무인 퇴근캠',
+    category: '인천유나이티드 IUFC TV',
+    data: [0, 1, 2],
+  };
   return (
     <FooterWrap>
       <div className="intro">
@@ -33,7 +47,7 @@ function Footer() {
       </div>
 
       <div className="detail-card">
-        {/* map돌려서 detailCard에서 3개 불러올 예정 -> grid 이용 , 값으로 보낼 것 ) 이미지 사이즈 , 카테고리 + 폰트 사이즈 , 제목 + 폰트 사이즈, 메뉴 + 폰트사이즈 */}
+        {cardData.data && cardData.data.map(() => <MainCard cardData={cardData} />)}
       </div>
       <div className="more">
         <img src={RightButton} className="more--button" />
@@ -167,5 +181,12 @@ const FooterWrap = styled.div`
       right: 0rem;
       bottom: 0.6rem;
     }
+  }
+  .detail-card {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    column-gap: 3.3rem;
+    padding-bottom: 4.2rem;
+    border-bottom: 0.1rem solid ${({ theme }) => theme.main.mainNaverLightgray};
   }
 `;
