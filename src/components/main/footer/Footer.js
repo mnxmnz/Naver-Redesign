@@ -29,11 +29,11 @@ function Footer() {
         <span className="intro__count-num">1,801</span>
         <span className="intro__count-text">개의 글</span>
         <span className="intro__setting">관심주제 설정</span>
-        <img src={SettingIcon} className="intro__setting-icon" />
+        <img src={SettingIcon} className="intro__setting-icon" alt="" />
       </div>
 
       <div className="menu-container">
-        <img src={LeftButton} className="menu__left-button" />
+        <img src={LeftButton} className="menu__left-button" alt="" />
         <div className="menu">
           <div className="menu__elem">엔터</div>
           <div className="menu__elem">스포츠</div>
@@ -44,14 +44,14 @@ function Footer() {
           <div className="menu__elem">게임</div>
           <div className="menu__elem">영화</div>
         </div>
-        <img src={RightButton} className="menu__right-button" />
+        <img src={RightButton} className="menu__right-button" alt="" />
       </div>
 
       <div className="detail-card">
         {cardData.data && cardData.data.map(() => <MainCard cardData={cardData} />)}
       </div>
       <div className="more">
-        <img src={RightButton} className="more--button" />
+        <img src={RightButton} className="more--button" alt="" />
         <div className="more--text">모든 스포츠 더보기</div>
       </div>
       <div className="footer">
