@@ -189,4 +189,34 @@ const FooterWrap = styled.div`
     padding-bottom: 4.2rem;
     border-bottom: 0.1rem solid ${({ theme }) => theme.main.mainNaverLightgray};
   }
+  .more {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    /* top: 0rem; */
+    bottom: -0.6rem;
+    &--button {
+      width: 5.8rem;
+      height: 5.8rem;
+      cursor: pointer;
+    }
+    &--text {
+      margin-top: 0.642rem;
+      font-size: 1.5rem;
+      text-align: center;
+      letter-spacing: -0.02em;
+      color: ${({ theme }) => theme.text.textBlack};
+    }
+  }
+  .footer {
+    margin-top: 10.1rem;
+    width: 100vw;
+    height: 32.7rem;
+    background: ${({ theme }) => theme.box.boxBg};
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;
