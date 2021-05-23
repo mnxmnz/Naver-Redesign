@@ -30,8 +30,9 @@ function Footer() {
 const FooterWrap = styled.div`
   display: flex;
   flex-direction: column;
-  padding-left: ${({ theme }) => theme.pcPadding.detail};
-  padding-right: ${({ theme }) => theme.pcPadding.detail};
+  align-items: center;
+  /* padding-left: ${({ theme }) => theme.pcPadding.detail};
+  padding-right: ${({ theme }) => theme.pcPadding.detail}; */
 
   .bold {
     font-weight: bold;
@@ -64,6 +65,7 @@ const FooterWrap = styled.div`
     flex-direction: column;
     align-items: center;
     position: relative;
+    top: -3rem;
     width: 120rem;
     &--button {
       width: 6.358rem;
