@@ -3,8 +3,8 @@ import MainCard from '../footer/MainCard';
 import SettingIcon from '../../../assets/icons/Setting.svg';
 import LeftButton from '../../../assets/icons/LeftButton.svg';
 import RightButton from '../../../assets/icons/RightButton.svg';
-import ArrowButton from '../../../assets/icons/Button_arrow.svg';
 import styled from 'styled-components';
+import FooterMenu from './FooterMenu';
 
 function Footer() {
   // 임의의 데이터 넣기 -> 서버 연결하면 데이터 받아서 넣기
@@ -54,44 +54,7 @@ function Footer() {
         <img src={RightButton} className="more--button" alt="" />
         <div className="more--text">모든 스포츠 더보기</div>
       </div>
-      <div className="footer">
-        <div className="footer--first">
-          <span className="footer--first__info">공지사항</span>
-          <span className="footer--first__service">서비스 전체보기</span>
-          <img src={ArrowButton} className="footer--first__icon" />
-        </div>
-        <div className="footer--creaters">
-          <span className="footer--creaters__title">Creaters</span>
-          <span className="footer--creaters__content">크리에이터</span>
-          <span className="footer--creaters__lastcontent">스몰비즈니스</span>
-        </div>
-        <div className="footer--partners">
-          <span className="footer--partners__title">Partners</span>
-          <span className="footer--partners__content">비즈니스 · 광고</span>
-          <span className="footer--partners__content">스토어 개설</span>
-          <span className="footer--partners__content">지역업체 등록</span>
-          <span className="footer--partners__lastcontent">엑스퍼트 등록</span>
-        </div>
-        <div className="footer--developers">
-          <span className="footer--developers__title">Developers</span>
-          <span className="footer--developers__content">네이버 개발자 센터</span>
-          <span className="footer--developers__content">오픈 API</span>
-          <span className="footer--developers__content">오픈소스</span>
-          <span className="footer--developers__content">네이버 D2</span>
-          <span className="footer--developers__content">네이버 D2SF</span>
-          <span className="footer--developers__lastcontent">네이버 랩스</span>
-        </div>
-        <div className="footer--rest">
-          <span className="footer--rest__element">회사소개</span>
-          <span className="footer--rest__element">인재채용</span>
-          <span className="footer--rest__element">제휴제안</span>
-          <span className="footer--rest__element">이용약관</span>
-          <span className="footer--rest__element bold">개인정보처리방침</span>
-          <span className="footer--rest__element">청소년보호정책</span>
-          <span className="footer--rest__element">네이버 정책</span>
-          <span className="footer--rest__lastelement">고객센터</span>
-        </div>
-      </div>
+      <FooterMenu />
     </FooterWrap>
   );
 }
@@ -152,6 +115,7 @@ const FooterWrap = styled.div`
       margin-left: 0.4rem;
       width: 4rem;
       height: 4rem;
+      cursor: pointer;
     }
   }
   .menu-container {
@@ -202,8 +166,6 @@ const FooterWrap = styled.div`
     align-items: center;
     position: absolute;
     margin-top: 29.5rem;
-    /* top: 0rem; */
-    /* bottom: -16.4rem; */
     &--button {
       width: 5.8rem;
       height: 5.8rem;
@@ -215,156 +177,6 @@ const FooterWrap = styled.div`
       text-align: center;
       letter-spacing: -0.02em;
       color: ${({ theme }) => theme.text.textBlack};
-    }
-  }
-  .footer {
-    margin-top: 10.1rem;
-    width: 100vw;
-    height: 32.7rem;
-    background: ${({ theme }) => theme.box.boxBg};
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    &--first {
-      width: 120rem;
-      height: 2.1rem;
-      margin-bottom: 2.1rem;
-      display: flex;
-      align-items: space-between;
-      /* border-bottom: 0.1rem solid ${({ theme }) => theme.main.mainNaverLightgray}; */
-      &__info {
-        font-weight: bold;
-        font-size: 1.5rem;
-        line-height: 1.8rem;
-        letter-spacing: -0.02em;
-        color: ${({ theme }) => theme.text.textBlack};
-      }
-      &__service {
-        font-weight: bold;
-        font-size: 1.5rem;
-        line-height: 1.8rem;
-        letter-spacing: -0.02em;
-        color: ${({ theme }) => theme.text.textBlack};
-      }
-      &__icon {
-        width: 2.1rem;
-        height: 2.1rem;
-      }
-    }
-    &--creaters {
-      width: 120rem;
-      padding-top: 1.192rem;
-      border-top: 0.1rem solid ${({ theme }) => theme.main.mainNaverLightgray};
-      &__title {
-        font-weight: bold;
-        font-size: 1.6rem;
-        line-height: 2.4rem;
-        letter-spacing: -0.05em;
-        color: ${({ theme }) => theme.text.textBlack};
-      }
-      &__content {
-        cursor: pointer;
-        padding-right: 0.7rem;
-        padding-left: 0.7rem;
-        border-right: 0.1rem solid ${({ theme }) => theme.text.textBlack};
-        font-size: 1.5rem;
-        line-height: 1.8rem;
-        letter-spacing: -0.02em;
-        color: ${({ theme }) => theme.text.textBlack};
-      }
-      &__lastcontent {
-        cursor: pointer;
-        padding-right: 0.7rem;
-        padding-left: 0.7rem;
-        font-size: 1.5rem;
-        line-height: 1.8rem;
-        letter-spacing: -0.02em;
-        color: ${({ theme }) => theme.text.textBlack};
-      }
-    }
-    &--partners {
-      width: 120rem;
-      margin-top: 0.9rem;
-      &__title {
-        font-weight: bold;
-        font-size: 1.6rem;
-        line-height: 2.4rem;
-        letter-spacing: -0.05em;
-        color: ${({ theme }) => theme.text.textBlack};
-      }
-      &__content {
-        cursor: pointer;
-        padding-right: 0.7rem;
-        padding-left: 0.7rem;
-        border-right: 0.1rem solid ${({ theme }) => theme.text.textBlack};
-        font-size: 1.5rem;
-        line-height: 1.8rem;
-        letter-spacing: -0.02em;
-        color: ${({ theme }) => theme.text.textBlack};
-      }
-      &__lastcontent {
-        cursor: pointer;
-        padding-right: 0.7rem;
-        padding-left: 0.7rem;
-        font-size: 1.5rem;
-        line-height: 1.8rem;
-        letter-spacing: -0.02em;
-        color: ${({ theme }) => theme.text.textBlack};
-      }
-    }
-    &--developers {
-      width: 120rem;
-      margin-top: 0.9rem;
-      &__title {
-        font-weight: bold;
-        font-size: 1.6rem;
-        line-height: 2.4rem;
-        letter-spacing: -0.05em;
-        color: ${({ theme }) => theme.text.textBlack};
-      }
-      &__content {
-        cursor: pointer;
-        padding-right: 0.7rem;
-        padding-left: 0.7rem;
-        border-right: 0.1rem solid ${({ theme }) => theme.text.textBlack};
-        font-size: 1.5rem;
-        line-height: 1.8rem;
-        letter-spacing: -0.02em;
-        color: ${({ theme }) => theme.text.textBlack};
-      }
-      &__lastcontent {
-        cursor: pointer;
-        padding-right: 0.7rem;
-        padding-left: 0.7rem;
-        font-size: 1.5rem;
-        line-height: 1.8rem;
-        letter-spacing: -0.02em;
-        color: ${({ theme }) => theme.text.textBlack};
-      }
-    }
-    &--rest {
-      margin-top: 6rem;
-      width: 120rem;
-      &__element {
-        cursor: pointer;
-        padding-right: 0.7rem;
-        padding-left: 0.7rem;
-        border-right: 0.1rem solid ${({ theme }) => theme.text.textBlack};
-        font-size: 1.5rem;
-        line-height: 1.8rem;
-        letter-spacing: -0.02em;
-        color: ${({ theme }) => theme.text.textBlack};
-      }
-      &__lastelement {
-        cursor: pointer;
-        padding-right: 0.7rem;
-        padding-left: 0.7rem;
-        font-size: 1.5rem;
-        line-height: 1.8rem;
-        letter-spacing: -0.02em;
-        color: ${({ theme }) => theme.text.textBlack};
-      }
     }
   }
 `;

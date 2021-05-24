@@ -34,6 +34,9 @@ function FooterMenu() {
 }
 
 const FooterMenuWrap = styled.div`
+  .bold {
+    font-weight: bold;
+  }
   .footer {
     margin: 0;
     height: 27.2rem;
