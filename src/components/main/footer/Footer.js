@@ -5,8 +5,10 @@ import LeftButton from '../../../assets/icons/LeftButton.svg';
 import RightButton from '../../../assets/icons/RightButton.svg';
 import styled from 'styled-components';
 import FooterMenu from './FooterMenu';
+import { useHistory } from 'react-router-dom';
 
 function Footer() {
+  const history = useHistory();
   // 임의의 데이터 넣기 -> 서버 연결하면 데이터 받아서 넣기
   const cardData = {
     allWidth: '37.8rem',
@@ -20,6 +22,9 @@ function Footer() {
     title: '[IUFC TV] 3 - 1 승리! 원정 첫 승리를 팬분들께 바칩니다!  승리의 무인 퇴근캠',
     category: '인천유나이티드 IUFC TV',
     data: [0, 1, 2],
+  };
+  const clickHandler = () => {
+    history.push('/detail');
   };
   return (
     <FooterWrap>
@@ -51,7 +56,7 @@ function Footer() {
         {cardData.data && cardData.data.map(() => <MainCard cardData={cardData} />)}
       </div>
       <div className="more">
-        <img src={RightButton} className="more--button" alt="" />
+        <img src={RightButton} className="more--button" alt="" onClick={clickHandler} />
         <div className="more--text">모든 스포츠 더보기</div>
       </div>
       <FooterMenu />
