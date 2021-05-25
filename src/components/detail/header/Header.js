@@ -18,86 +18,92 @@ import IconLookup from '../../../assets/icons/IconLookup.svg';
 function Header() {
   return (
     <HeaderWrap>
-      <div className="header__bar">
-        <img className="header__bar--logo" src={NaverSportsLogo} alt="" />
-        <div className="header__bar--menu">
-          <span id="bold">카페</span>
-          <span id="bold">블로그</span>
-          <span id="bold">지식iN</span>
-          <span id="bold">쇼핑</span>
-          <span>
-            더보기
-            <img id="etc--button" src={ButtonArrowDown} alt="" />
-          </span>
-          <span>
-            <img id="user--icon" src={IconUser} alt="" />
-            령이
-            <img id="user--toggle" src={SearchToggle} alt="" />
-          </span>
-          <span>
-            <img id="icons" src={IconAlarm} alt="" />
-            <img id="icons" src={IconMail} alt="" />
-            <img id="icons" src={IconGrid} alt="" />
-          </span>
-        </div>
-      </div>
-      <div className="top__menu">
-        <div className="top__menu--front">
-          <span id="clicked">스포츠홈</span>
-          <span id="un_clicked">야구</span>
-          <span id="un_clicked">해외야구</span>
-          <span id="un_clicked">축구</span>
-          <span id="un_clicked">해외축구</span>
-          <span id="un_clicked">농구</span>
-          <span id="un_clicked">배구</span>
-          <span id="un_clicked">골프</span>
-          <span id="un_clicked">일반</span>
-          <span id="un_clicked">e스포츠&게임</span>
-        </div>
-        <span id="center-bar">|</span>
-        <div className="top__menu--back">
-          <span>오늘의 경기</span>
-          <span>연재</span>
-          <span>랭킹</span>
-        </div>
-      </div>
-      <div className="main">
-        <img className="main__button" src={ButtonLeft} alt="" />
-        <div className="main__banner">
-          <img className="main__banner--img" src={ImgMainBanner} alt="sample img" />
-          <div className="main__banner--description">
-            <h2>핫뉴스</h2>
-            <h1>
-              SON보다 더한 '양발잡이'가 나타났다...
-              <br />
-              30골 중 '왼발 15골-오른발 15골'
-            </h1>
-            <h3>
-              [스포탈코리아]김희웅 인턴기자=우스만뎀벨라뭐시기 어쩌구 저쩌구 요즈음 자꾸 밤마다 배가
-              아픈데 이건 절대 응가가 아니구 진짜 그 위에 배 아픈거 뭔지 알지.. 알아죠... 교수님
-              과제 멈춰..!!
-            </h3>
-            <div id="icons">
-              <span id="comment">
-                <img src={IconComment} alt="" />
-                10
-              </span>
-              <span id="like">
-                <img src={IconLike} alt="" />
-                10
-              </span>
-              <span id="shared">
-                <img src={IconShared} alt="" />
-                10
-              </span>
-              <span id="lookup">
-                <img src={IconLookup} alt="" />
-                1990
-              </span>
-            </div>
+      <div className="header__wrap">
+        <div className="header__bar">
+          <img className="header__bar--logo" src={NaverSportsLogo} alt="" />
+          <div className="header__bar--menu">
+            <span id="bold">카페</span>
+            <span id="bold">블로그</span>
+            <span id="bold">지식iN</span>
+            <span id="bold">쇼핑</span>
+            <span>
+              더보기
+              <img id="etc--button" src={ButtonArrowDown} alt="" />
+            </span>
+            <span>
+              <img id="user--icon" src={IconUser} alt="" />
+              령이
+              <img id="user--toggle" src={SearchToggle} alt="" />
+            </span>
+            <span>
+              <img id="icons" src={IconAlarm} alt="" />
+              <img id="icons" src={IconMail} alt="" />
+              <img id="icons" src={IconGrid} alt="" />
+            </span>
           </div>
         </div>
-        <img className="main__button" src={ButtonRight} alt="" />
+      </div>
+      <div className="top__wrap">
+        <div className="top__menu">
+          <div className="top__menu--front">
+            <span id="clicked">스포츠홈</span>
+            <span id="un_clicked">야구</span>
+            <span id="un_clicked">해외야구</span>
+            <span id="un_clicked">축구</span>
+            <span id="un_clicked">해외축구</span>
+            <span id="un_clicked">농구</span>
+            <span id="un_clicked">배구</span>
+            <span id="un_clicked">골프</span>
+            <span id="un_clicked">일반</span>
+            <span id="un_clicked">e스포츠&게임</span>
+          </div>
+          <span id="center-bar">|</span>
+          <div className="top__menu--back">
+            <span>오늘의 경기</span>
+            <span>연재</span>
+            <span>랭킹</span>
+          </div>
+        </div>
+      </div>
+      <div className="main__wrap">
+        <div className="main">
+          <img className="main__button" src={ButtonLeft} alt="" />
+          <div className="main__banner">
+            <img className="main__banner--img" src={ImgMainBanner} alt="sample img" />
+            <div className="main__banner--description">
+              <h2>핫뉴스</h2>
+              <h1>
+                SON보다 더한 '양발잡이'가 나타
+                <br />
+                30골 중 '왼발 15골-오른발 15골'
+              </h1>
+              <h3>
+                [스포탈코리아]김희웅 인턴기자=우스만뎀벨라뭐시기 어쩌구 저쩌구 요즈음 자꾸 밤마다
+                배가 아픈데 이건 절대 응가가 아니구 진짜 그 위에 배 아픈거 뭔지 알지.. 알아죠...
+                교수님 과제 멈춰..!!
+              </h3>
+              <div id="icons">
+                <span id="comment">
+                  <img src={IconComment} alt="" />
+                  10
+                </span>
+                <span id="like">
+                  <img src={IconLike} alt="" />
+                  10
+                </span>
+                <span id="shared">
+                  <img src={IconShared} alt="" />
+                  10
+                </span>
+                <span id="lookup">
+                  <img src={IconLookup} alt="" />
+                  1990
+                </span>
+              </div>
+            </div>
+          </div>
+          <img className="main__button" src={ButtonRight} alt="" />
+        </div>
       </div>
     </HeaderWrap>
   );
@@ -105,10 +111,14 @@ function Header() {
 
 const HeaderWrap = styled.div`
   .header {
-    &__bar {
-      padding-left: ${({ theme }) => theme.pcPadding.detail};
-      padding-right: ${({ theme }) => theme.pcPadding.detail};
+    /* header부분 flex제어 */
+    &__wrap {
       background-color: ${({ theme }) => theme.main.mainNewsBlue};
+      display: flex;
+      justify-content: center;
+    }
+    &__bar {
+      width: 118.9rem;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -159,11 +169,17 @@ const HeaderWrap = styled.div`
       }
     }
   }
+  /*top__menu부분 flex 제어  */
+  .top__wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
   .top {
     &__menu {
-      padding-left: ${({ theme }) => theme.pcPadding.detail};
-      padding-right: ${({ theme }) => theme.pcPadding.detail};
+      width: 118.9rem;
       background-color: white;
       font-size: 1.6rem;
       letter-spacing: -0.08rem;
@@ -199,14 +215,16 @@ const HeaderWrap = styled.div`
       }
     }
   }
+  /* main부분 flex제어 */
+  .main__wrap {
+    background-color: ${({ theme }) => theme.background.sportsBannerBg};
+    display: flex;
+    justify-content: center;
+  }
 
   .main {
-    padding-left: ${({ theme }) => theme.pcPadding.detail};
-    padding-right: ${({ theme }) => theme.pcPadding.detail};
-    background-color: ${({ theme }) => theme.background.sportsBannerBg};
     height: 40.8rem;
     display: flex;
-    flex-direction: row;
     align-items: center;
 
     &__button {
@@ -229,8 +247,8 @@ const HeaderWrap = styled.div`
       }
 
       &--description {
-        width: 46rem;
-        margin-left: 1.1rem;
+        width: 45.6rem;
+        margin-left: 1.5rem;
 
         h2 {
           font-size: 2.4rem;
@@ -276,11 +294,6 @@ const HeaderWrap = styled.div`
         }
       }
     }
-  }
-
-  @media (max-width: 1200px) {
-    padding-left: ${({ theme }) => theme.tabletPadding.detailHeader};
-    padding-right: ${({ theme }) => theme.tabletPadding.detailHeader};
   }
 `;
 
