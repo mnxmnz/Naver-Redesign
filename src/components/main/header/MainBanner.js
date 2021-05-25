@@ -2,11 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import NewsStand from './NewsStand';
 import Account from './Account';
+import MainBannerImg from '../../../assets/icons/MainBannerImg.svg';
 
 function MainBanner() {
   return (
     <MainBannerWrap>
       <NewsStand />
+      <img className="banner__img--main" src={MainBannerImg} alt="" />
       <Account />
     </MainBannerWrap>
   );
@@ -21,4 +23,10 @@ const MainBannerWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  .banner__img--main {
+    width: 71.5rem;
+    height: 25.8rem;
+    margin-top: 9.2rem;
+  }
 `;
