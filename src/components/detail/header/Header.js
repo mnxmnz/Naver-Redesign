@@ -171,7 +171,6 @@ const HeaderWrap = styled.div`
       height: 4.4rem;
       display: flex;
       align-items: center;
-      box-shadow: 0 0 0.4rem 0;
 
       &--front {
         span {
