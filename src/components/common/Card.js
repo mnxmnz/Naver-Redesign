@@ -56,9 +56,9 @@ function MainCard({ cardData }) {
   //view에서 넘어온 정보 구조분해 할당
   const { allWidth, cardHeight, imageHeight, createdAtFontSize, titleFontSize, categoryFontSize } =
     sizeData;
-  console.log(imgUrl);
+  // console.log(imgUrl);
 
-  console.log(allWidth);
+  // console.log(allWidth);
 
   return (
     <DetailCardWrap
