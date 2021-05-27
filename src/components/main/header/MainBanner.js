@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import NewsStand from './NewsStand';
-import Account from './Account';
 import MainBannerImg from '../../../assets/icons/MainBannerImg.svg';
 
 function MainBanner() {
@@ -9,7 +8,6 @@ function MainBanner() {
     <MainBannerWrap>
       <NewsStand />
       <img className="banner__img--main" src={MainBannerImg} alt="" />
-      <Account />
     </MainBannerWrap>
   );
 }
