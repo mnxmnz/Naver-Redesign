@@ -70,6 +70,7 @@ const FooterWrap = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 9.2rem;
   .intro {
     width: 120rem;
     height: 4rem;

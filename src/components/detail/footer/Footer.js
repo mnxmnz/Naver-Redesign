@@ -41,8 +41,6 @@ const FooterWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* padding-left: ${({ theme }) => theme.pcPadding.detail};
-  padding-right: ${({ theme }) => theme.pcPadding.detail}; */
 
   .bold {
     font-weight: bold;
@@ -60,7 +58,6 @@ const FooterWrap = styled.div`
       color: ${({ theme }) => theme.text.textBlack};
     }
     &__detail {
-      font-family: Apple SD Gothic Neo;
       font-style: normal;
       font-weight: normal;
       font-size: 1.5rem;
@@ -102,4 +99,5 @@ const CardList = styled.div`
   width: 120rem;
   margin-top: 1.1rem;
 `;
+
 export default Footer;
