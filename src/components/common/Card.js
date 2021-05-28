@@ -3,7 +3,7 @@ import PlayIcon from '../../assets/icons/PlayIcon.svg';
 import styled, { css } from 'styled-components';
 
 //하나의 카드를 형성하는 컴포넌트, 이 컴포넌트를 map으로 받아서 footer에서 grid로 나타낼 예정임.
-function MainCard({ cardData, key, data }) {
+function MainCard({ cardData, data }) {
   //받을 데이터 ) 서버로부터 받은 imgUrl, category,title, createdAt
   //메인, 디테일 페이지에서 받은 view 정보 -> 그걸 가지고 사이즈 할당
 
@@ -92,7 +92,7 @@ const DetailCardWrap = styled.div`
   .card--top {
     &__cardimage {
       /* 서버로부터 제대로 데이터 받으면 이 방식 이용해서 이미지 불러오기 */
-      background: url(${props => props.imgUrl}) center center / 200% no-repeat;
+      background: url(${props => props.imgUrl}) center center / 100% 100% no-repeat;
       position: relative;
       width: ${props => props.allWidth};
       height: ${props => props.imageHeight};
@@ -183,6 +183,7 @@ const DetailCardWrap = styled.div`
     }
     &__title {
       margin-top: 0.815rem;
+      font-weight: bold;
       font-size: ${props => props.titleFontSize};
       line-height: 1.8rem;
       letter-spacing: -0.02rem;
