@@ -6,22 +6,23 @@ import RightButton from '../../../assets/icons/RightButton.svg';
 import styled from 'styled-components';
 import FooterMenu from './FooterMenu';
 import { useHistory } from 'react-router-dom';
-import imgUrl from '../../../assets/icons/example2.jpeg';
+import { useRecoilValue } from 'recoil';
+import { mainDataAtom } from '../../../states/atom';
 
 function Footer() {
   const history = useHistory();
+  const mainData = useRecoilValue(mainDataAtom);
+  if (mainData.todayVideoRes) {
+    console.log(mainData.todayVideoRes);
+  }
+
   // 임의의 데이터 넣기 -> 서버 연결하면 데이터 받아서 넣기
   //서버로부터 받을 데이터 -> imgUrl, category,title, createdAt
   //우리가 모듈화할 데이터 mainDesktop , mainTablet , detailDesktop , detailTab
   const cardData = {
     view: 'mainDesktop',
-    /*임의의 데이터 넣음*/
-    imgUrl: imgUrl,
-    category: '구단특집',
-    title: '[IUFC TV] 3 - 1 승리! 원정 첫 승리를 팬분들께 바칩니다!  승리의 무인 퇴근캠',
-    createdAt: '인천유나이티드 IUFC TV',
-    data: [0, 1, 2],
   };
+
   const clickHandler = () => {
     history.push('/detail');
   };
@@ -50,9 +51,11 @@ function Footer() {
         </div>
         <img src={RightButton} className="menu__right-button" alt="" />
       </div>
-
       <div className="detail-card">
-        {cardData.data && cardData.data.map(() => <MainCard cardData={cardData} />)}
+        {mainData.todayVideoRes &&
+          mainData.todayVideoRes.map(data => {
+            return <MainCard data={data} cardData={cardData} />;
+          })}
       </div>
       <div className="more">
         <img src={RightButton} className="more--button" alt="" onClick={clickHandler} />
