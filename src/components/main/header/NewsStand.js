@@ -9,7 +9,7 @@ function NewsStand() {
         <span className="news__company">연합뉴스</span>
         <img src={ButtonArrowRight} alt="" />
         <span className="news__title">
-          바이든 "백신, 다른나라 줄만큼 안 충분해...잉여백신 살피는중"
+          박나희, 갈겨나희 상태로 스카 도착... 김민지 김소령 걱정 커져..
         </span>
       </div>
       <div className="button">
