@@ -8,14 +8,17 @@ import getSportsApi from '../lib/getSportsApi';
 
 function Detail() {
   const setSportsData = useSetRecoilState(sportsDataAtom);
+
   const getSportsData = async () => {
     const data = await getSportsApi();
     setSportsData(data);
     console.log(data);
   };
+
   useEffect(() => {
     getSportsData();
   }, []);
+
   return (
     <>
       <Header />

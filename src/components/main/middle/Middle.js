@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import Advertisement from './Advertisement';
-import Press from './press/Press';
+import News from './news/News';
 
 function Middle() {
   return (
     <MiddleWrap>
       <div>
-        <Press />
+        <News />
         <Advertisement />
       </div>
     </MiddleWrap>

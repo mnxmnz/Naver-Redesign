@@ -8,7 +8,7 @@ function Advertisement() {
 const AdvertisementWrap = styled.div`
   width: 120rem;
   height: 21.8rem;
-  margin-bottom: 9.2rem;
+  margin-top: 6.5rem;
   background-color: ${({ theme }) => theme.main.mainNaverLightgray};
 `;
 

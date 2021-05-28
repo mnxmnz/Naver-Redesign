@@ -1,5 +1,5 @@
 import React from 'react';
-import ArrowButton from '../../../assets/icons/Button_arrow.svg';
+import ArrowButton from '../../../assets/icons/ButtonArrow.svg';
 import styled from 'styled-components';
 
 function FooterMenu() {
@@ -10,7 +10,7 @@ function FooterMenu() {
           <div className="footer--first__info">공지사항</div>
           <div className="footer--first__right">
             <div className="footer--first__service">서비스 전체보기</div>
-            <img src={ArrowButton} className="footer--first__icon" />
+            <img src={ArrowButton} className="footer--first__icon" alt="" />
           </div>
         </div>
         <div className="footer--creaters">

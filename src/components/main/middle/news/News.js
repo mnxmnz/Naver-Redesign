@@ -1,20 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
-import PressHeader from './PressHeader';
+import NewsHeader from './NewsHeader';
 
-function Press() {
+function News() {
   return (
-    <PressWrap>
-      <PressHeader />
-    </PressWrap>
+    <NewsWrap>
+      <NewsHeader />
+    </NewsWrap>
   );
 }
 
-const PressWrap = styled.div`
+const NewsWrap = styled.div`
   width: 120rem;
   height: 29.6rem;
-  margin-bottom: 6.5rem;
+  margin-top: 6rem;
   background-color: ${({ theme }) => theme.main.mainNaverLightgray};
 `;
 
-export default Press;
+export default News;

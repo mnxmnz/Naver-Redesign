@@ -56,9 +56,6 @@ function MainCard({ cardData }) {
   //view에서 넘어온 정보 구조분해 할당
   const { allWidth, cardHeight, imageHeight, createdAtFontSize, titleFontSize, categoryFontSize } =
     sizeData;
-  // console.log(imgUrl);
-
-  // console.log(allWidth);
 
   return (
     <DetailCardWrap
@@ -72,7 +69,7 @@ function MainCard({ cardData }) {
     >
       <div className="card--top">
         <figure className="card--top__cardimage">
-          <img src={PlayIcon} className="card--top__playicon" />
+          <img src={PlayIcon} className="card--top__playicon" alt="img" />
           <div className="card--top__time">05:45</div>
         </figure>
       </div>

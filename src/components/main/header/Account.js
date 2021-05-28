@@ -138,11 +138,11 @@ const AccountWrap = styled.div`
         }
 
         #min {
-          color: ${({ theme }) => theme.main.mainNaverBlue}
+          color: ${({ theme }) => theme.main.mainNaverBlue};
         }
 
         #max {
-          color: ${({ theme }) => theme.main.mainNaverRed}
+          color: ${({ theme }) => theme.main.mainNaverRed};
         }
       }
 
@@ -151,5 +151,4 @@ const AccountWrap = styled.div`
       }
     }
   }
-}
 `;
