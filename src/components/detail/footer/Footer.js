@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import DetailCard from '../../common/Card';
 import PlusBtn from '../../../assets/icons/PlusBtn.svg';
 import FooterMenu from './FooterMenu';
-import imgUrl from '../../../assets/icons/example.jpeg';
 import { useRecoilValue } from 'recoil';
 import { sportsDataAtom } from '../../../states/atom';
 
