@@ -5,15 +5,18 @@ import PlusBtn from '../../../assets/icons/PlusBtn.svg';
 import FooterMenu from './FooterMenu';
 import { useRecoilValue } from 'recoil';
 import { sportsDataAtom } from '../../../states/atom';
+import { useMediaQuery } from 'react-responsive';
 
 function Footer() {
   const detailData = useRecoilValue(sportsDataAtom);
   if (detailData.todayVideoRes) {
     console.log(detailData.video);
   }
-  const cardData = {
-    view: 'detailDesktop',
-  };
+  const isPc = useMediaQuery({
+    query: '(min-width:1200px)',
+  });
+
+  const cardView = isPc ? 'detailDesktop' : 'detailTablet';
 
   return (
     <>
@@ -26,7 +29,7 @@ function Footer() {
         <CardList>
           {detailData.video &&
             detailData.video.map(data => {
-              return <DetailCard data={data} cardData={cardData} />;
+              return <DetailCard data={data} cardView={cardView} />;
             })}
         </CardList>
         <div className="more">
@@ -48,6 +51,9 @@ const FooterWrap = styled.div`
     font-weight: bold;
   }
   .introduce {
+    @media (max-width: 1200px) {
+      width: 110.6rem;
+    }
     display: flex;
     justify-content: space-between;
     width: 120rem;
@@ -92,6 +98,12 @@ const FooterWrap = styled.div`
 `;
 
 const CardList = styled.div`
+  @media (max-width: 1200px) {
+    width: 110.6rem;
+    height: 161rem;
+    grid-template-columns: repeat(3, auto);
+    overflow: hidden;
+  }
   display: grid;
   grid-template-columns: repeat(4, auto);
   row-gap: 2.485rem;

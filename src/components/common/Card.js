@@ -21,6 +21,7 @@ function MainCard({ cardView, data }) {
     titleFontSize: '',
     categoryFontSize: '',
   };
+  console.log(cardView);
 
   //임의로 넘어온 정보 구조분해 할당
   // const { imgUrl, createdAt, title, category } = cardData
@@ -40,7 +41,7 @@ function MainCard({ cardView, data }) {
     sizeData.createdAtFontSize = '1.6rem';
     sizeData.titleFontSize = '1.6rem';
     sizeData.categoryFontSize = '1.5rem';
-  } else if (cardView === 'detailDesktop') {
+  } else if (cardView === 'detailTablet') {
     //detailTablet 크기 정보
     sizeData.allWidth = '34.6rem';
     sizeData.cardHeight = '29.8rem';
@@ -70,6 +71,7 @@ function MainCard({ cardView, data }) {
       titleFontSize={titleFontSize}
       categoryFontSize={categoryFontSize}
       imgUrl={imgUrl}
+      cardView={cardView}
     >
       <div className="card--top">
         <figure className="card--top__cardimage">
@@ -101,21 +103,23 @@ const DetailCardWrap = styled.div`
       position: absolute;
       ${props =>
         //detailDesktop
-        props.allWidth === '28.21rem'
+        props.cardView === 'detailDesktop'
           ? css`
               margin-left: 1.426rem;
               margin-top: 11.915rem;
             `
           : //mainDesktop
-          props.allWidth === '37.8rem'
+          props.cardView === 'mainDesktop'
           ? css`
               margin-top: 32.9rem;
               margin-left: 2rem;
             `
           : //detailTablet
-          props.allwidth === '34.6rem'
+          props.cardView === 'detailTablet'
           ? css`
-              margin-top: 14.6rem;
+              width: 3.3rem;
+              height: 4rem;
+              margin-top: 14.7rem;
               margin-left: 2rem;
             `
           : //mainTablet
@@ -130,19 +134,19 @@ const DetailCardWrap = styled.div`
       height: 2.241rem;
       ${props =>
         //detailDesktop
-        props.allWidth === '28.21rem'
+        props.cardView === 'detailDesktop'
           ? css`
               margin-left: 22.406rem;
               margin-top: 12.832rem;
             `
           : //mainDesktop
-          props.allWidth === '37.8rem'
+          props.cardView === 'mainDesktop'
           ? css`
               margin-left: 31.4rem;
               margin-top: 34.4rem;
             `
           : //detailTablet
-          props.allwidth === '34.6rem'
+          props.cardView === 'detailTablet'
           ? css`
               margin-top: 16.4rem;
               margin-left: 27.9rem;
@@ -167,14 +171,25 @@ const DetailCardWrap = styled.div`
     &__kind {
       ${props =>
         //만약 detailDesktop의 width이면
-        props.allWidth === '28.21rem'
+        props.cardView === 'detailDesktop'
           ? css`
               margin-top: 1.12rem;
             `
-          : //만약 mainDesktop의 width이면
-            css`
+          : //mainDesktop
+          props.cardView === 'mainDesktop'
+          ? css`
               margin-top: 1.12rem;
+            `
+          : //detailTablet
+          props.cardView === 'detailTablet'
+          ? css`
+              margin-top: 1.4rem;
+            `
+          : //mainTablet
+            css`
+              margin-top: 1.2rem;
             `}
+
       font-weight: bold;
       font-size: ${props => props.createdAtFontSize};
       line-height: 1.8rem;
