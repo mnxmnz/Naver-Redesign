@@ -18,7 +18,7 @@ function Footer() {
   }
 
   const isPc = useMediaQuery({
-    query: '(max-width:1200px)',
+    query: '(min-width:1200px)',
   });
 
   const cardView = isPc ? 'mainDesktop' : 'mainTablet';
@@ -127,7 +127,7 @@ const FooterWrap = styled.div`
     }
     &__count-text {
       @media (max-width: 1200px) {
-        width: 10rem;
+        width: 9rem;
       }
       width: 7.2rem;
       font-size: 1.5rem;
@@ -138,7 +138,7 @@ const FooterWrap = styled.div`
     }
     &__setting {
       @media (max-width: 1200px) {
-        width: 15rem;
+        width: 14rem;
       }
       width: 9.3rem;
       font-size: 1.5rem;
@@ -231,6 +231,7 @@ const DetailCards = styled.div`
     height: 44rem;
     grid-template-columns: repeat(2, auto);
     overflow: hidden;
+    column-gap: 2.2rem;
   }
   grid-template-columns: repeat(3, auto);
   column-gap: 3.3rem;
