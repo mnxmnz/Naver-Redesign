@@ -41,7 +41,7 @@ function Footer() {
         <img src={LeftButton} className="menu__left-button" alt="" />
         <div className="menu">
           <div className="menu__elem">엔터</div>
-          <div className="menu__elem">스포츠</div>
+          <div className="menu__elem menu__elem__sport">스포츠</div>
           <div className="menu__elem">자동차</div>
           <div className="menu__elem">웹툰</div>
           <div className="menu__elem">경제M</div>
@@ -186,15 +186,21 @@ const FooterWrap = styled.div`
       letter-spacing: -0.05em;
       color: ${({ theme }) => theme.text.textBlack};
       border-right: 0.1rem solid ${({ theme }) => theme.main.mainNaverLightgray};
+      &__sport {
+        background-color: ${({ theme }) => theme.main.mainNewsBlue};
+        color: ${({ theme }) => theme.text.textWhite};
+      }
     }
     &__left-button {
       position: absolute;
       bottom: 0.6rem;
+      cursor: pointer;
     }
     &__right-button {
       position: absolute;
       right: 0rem;
       bottom: 0.6rem;
+      cursor: pointer;
     }
   }
   .more {
