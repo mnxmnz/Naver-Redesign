@@ -103,6 +103,10 @@ const FooterWrap = styled.div`
       display: flex;
       align-items: space-between;
       justify-content: space-between;
+      @media (max-width: 1200px) {
+        width: 110.4rem;
+      }
+
       &__info {
         font-weight: bold;
         font-size: 1.5rem;
@@ -131,19 +135,31 @@ const FooterWrap = styled.div`
       }
     }
     &--creaters {
+      @media (max-width: 1200px) {
+        width: 110.4rem;
+      }
       width: 120rem;
       padding-top: 1.192rem;
       border-top: 0.1rem solid ${({ theme }) => theme.main.mainNaverLightgray};
     }
     &--partners {
+      @media (max-width: 1200px) {
+        width: 110.4rem;
+      }
       width: 120rem;
       margin-top: 0.9rem;
     }
     &--developers {
+      @media (max-width: 1200px) {
+        width: 110.4rem;
+      }
       width: 120rem;
       margin-top: 0.9rem;
     }
     &--rest {
+      @media (max-width: 1200px) {
+        width: 110.4rem;
+      }
       margin-left: -1.4rem;
       margin-top: 6rem;
       width: 120rem;

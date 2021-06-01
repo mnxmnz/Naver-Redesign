@@ -8,6 +8,7 @@ import FooterMenu from './FooterMenu';
 import { useHistory } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { mainDataAtom } from '../../../states/atom';
+import { useMediaQuery } from 'react-responsive';
 
 function Footer() {
   const history = useHistory();
@@ -16,12 +17,11 @@ function Footer() {
     console.log(mainData.todayVideoRes);
   }
 
-  // 임의의 데이터 넣기 -> 서버 연결하면 데이터 받아서 넣기
-  //서버로부터 받을 데이터 -> imgUrl, category,title, createdAt
-  //우리가 모듈화할 데이터 mainDesktop , mainTablet , detailDesktop , detailTab
-  const cardData = {
-    view: 'mainDesktop',
-  };
+  const isPc = useMediaQuery({
+    query: '(max-width:1200px)',
+  });
+
+  const cardView = isPc ? 'mainDesktop' : 'mainTablet';
 
   const clickHandler = () => {
     history.push('/detail');
@@ -46,17 +46,21 @@ function Footer() {
           <div className="menu__elem">웹툰</div>
           <div className="menu__elem">경제M</div>
           <div className="menu__elem">레시피</div>
-          <div className="menu__elem">게임</div>
-          <div className="menu__elem">영화</div>
+          <div id="hidden" className="menu__elem">
+            게임
+          </div>
+          <div id="hidden" className="menu__elem">
+            영화
+          </div>
         </div>
         <img src={RightButton} className="menu__right-button" alt="" />
       </div>
-      <div className="detail-card">
+      <DetailCards>
         {mainData.todayVideoRes &&
           mainData.todayVideoRes.map(data => {
-            return <MainCard data={data} cardData={cardData} />;
+            return <MainCard data={data} cardView={cardView} />;
           })}
-      </div>
+      </DetailCards>
       <div className="more">
         <img src={RightButton} className="more--button" alt="" onClick={clickHandler} />
         <div className="more--text">모든 스포츠 더보기</div>
@@ -74,21 +78,38 @@ const FooterWrap = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 9.2rem;
+  #hidden {
+    @media (max-width: 1200px) {
+      display: none;
+    }
+  }
   .intro {
     width: 120rem;
     height: 4rem;
     display: flex;
     align-items: center;
+    @media (max-width: 1200px) {
+      width: 110.4rem;
+      height: 2.5rem;
+    }
     &__first {
       font-weight: bold;
       width: 13.9rem;
       font-size: 1.9rem;
+      @media (max-width: 1200px) {
+        width: 20rem;
+        margin-right: 1.8rem;
+      }
       /* line-height: 2.3rem; */
       letter-spacing: -0.05em;
       margin-right: 1.8rem;
       color: ${({ theme }) => theme.text.textBlack};
     }
     &__second {
+      @media (max-width: 1200px) {
+        width: 40rem;
+        margin-right: 47rem;
+      }
       width: 20rem;
       font-size: 1.5rem;
       letter-spacing: -0.02em;
@@ -105,6 +126,9 @@ const FooterWrap = styled.div`
       color: ${({ theme }) => theme.text.textBlack};
     }
     &__count-text {
+      @media (max-width: 1200px) {
+        width: 10rem;
+      }
       width: 7.2rem;
       font-size: 1.5rem;
       letter-spacing: -0.02em;
@@ -113,6 +137,9 @@ const FooterWrap = styled.div`
       color: ${({ theme }) => theme.text.textSub};
     }
     &__setting {
+      @media (max-width: 1200px) {
+        width: 15rem;
+      }
       width: 9.3rem;
       font-size: 1.5rem;
       letter-spacing: -0.02em;
@@ -129,17 +156,28 @@ const FooterWrap = styled.div`
   .menu-container {
     width: 120rem;
     height: 8rem;
+    @media (max-width: 1200px) {
+      width: 110.4rem;
+      height: 8rem;
+    }
     position: relative;
     margin-top: 2.2rem;
   }
   .menu {
     width: 114.2rem;
     height: 8rem;
+    @media (max-width: 1200px) {
+      width: 104.6rem;
+    }
     display: flex;
     border: 0.1rem solid ${({ theme }) => theme.main.mainNaverLightgray};
     margin-left: 2.9rem;
     &__elem {
-      flex-grow: 1;
+      width: 15.7rem;
+      height: 7.9rem;
+      @media (max-width: 1200px) {
+        width: 17.4rem;
+      }
       display: flex;
       align-items: center;
       justify-content: center;
@@ -159,21 +197,15 @@ const FooterWrap = styled.div`
       bottom: 0.6rem;
     }
   }
-  .detail-card {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    column-gap: 3.3rem;
-    padding-bottom: 4.2rem;
-    margin-top: 2.4rem;
-    border-bottom: 0.1rem solid ${({ theme }) => theme.main.mainNaverLightgray};
-  }
   .more {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: absolute;
-    margin-top: 29.5rem;
+    margin-top: 25.2rem;
+    @media (max-width: 1200px) {
+      margin-top: 19rem;
+    }
     &--button {
       width: 5.8rem;
       height: 5.8rem;
@@ -187,4 +219,22 @@ const FooterWrap = styled.div`
       color: ${({ theme }) => theme.text.textBlack};
     }
   }
+`;
+
+const DetailCards = styled.div`
+  position: relative;
+  display: grid;
+  width: 120rem;
+  height: 48.8rem;
+  @media (max-width: 1200px) {
+    width: 110.4rem;
+    height: 44rem;
+    grid-template-columns: repeat(2, auto);
+    overflow: hidden;
+  }
+  grid-template-columns: repeat(3, auto);
+  column-gap: 3.3rem;
+  padding-bottom: 4.2rem;
+  margin-top: 2.4rem;
+  border-bottom: 0.1rem solid ${({ theme }) => theme.main.mainNaverLightgray};
 `;
