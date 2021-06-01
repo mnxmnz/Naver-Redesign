@@ -100,9 +100,11 @@ const FooterWrap = styled.div`
 const CardList = styled.div`
   @media (max-width: 1200px) {
     width: 110.6rem;
-    height: 161rem;
+    height: 164rem;
     grid-template-columns: repeat(3, auto);
     overflow: hidden;
+    row-gap: 3rem;
+    column-gap: 3.4rem;
   }
   display: grid;
   grid-template-columns: repeat(4, auto);

@@ -25,7 +25,7 @@ function MainCard({ cardView, data }) {
 
   //임의로 넘어온 정보 구조분해 할당
   // const { imgUrl, createdAt, title, category } = cardData
-  if (cardView === 'mainDesktop') {
+  if (cardView === 'mainTablet') {
     //mainTablet 크기 정보
     sizeData.allWidth = '54.1rem';
     sizeData.cardHeight = '44rem';
@@ -33,7 +33,7 @@ function MainCard({ cardView, data }) {
     sizeData.createdAtFontSize = '1.5rem';
     sizeData.titleFontSize = '1.6rem';
     sizeData.categoryFontSize = '1.6rem';
-  } else if (cardView === 'mainTablet') {
+  } else if (cardView === 'mainDesktop') {
     //mainDestop 크기 정보
     sizeData.allWidth = '37.8rem';
     sizeData.cardHeight = '48.8rem';
