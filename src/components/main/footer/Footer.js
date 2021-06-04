@@ -13,9 +13,6 @@ import { useMediaQuery } from 'react-responsive';
 function Footer() {
   const history = useHistory();
   const mainData = useRecoilValue(mainDataAtom);
-  if (mainData.todayVideoRes) {
-    console.log(mainData.todayVideoRes);
-  }
 
   const isPc = useMediaQuery({
     query: '(min-width:1200px)',

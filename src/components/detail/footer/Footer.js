@@ -9,9 +9,7 @@ import { useMediaQuery } from 'react-responsive';
 
 function Footer() {
   const detailData = useRecoilValue(sportsDataAtom);
-  if (detailData.todayVideoRes) {
-    console.log(detailData.video);
-  }
+
   const isPc = useMediaQuery({
     query: '(min-width:1200px)',
   });

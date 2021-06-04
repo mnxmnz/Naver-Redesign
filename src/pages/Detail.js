@@ -12,7 +12,6 @@ function Detail() {
   const getSportsData = async () => {
     const data = await getSportsApi();
     setSportsData(data);
-    console.log(data);
   };
 
   useEffect(() => {

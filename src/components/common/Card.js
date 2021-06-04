@@ -9,8 +9,6 @@ function MainCard({ cardView, data }) {
 
   //서버에서 보낸 애 구조분해할당
   const { imageUrl: imgUrl, category, title, createdAt } = data;
-  console.log('데이터 나와라 쫌', data);
-  console.log('카드뷰가 머야', cardView);
 
   //view에 따라 사이즈 데이터 세팅할 객체
   const sizeData = {
@@ -21,7 +19,6 @@ function MainCard({ cardView, data }) {
     titleFontSize: '',
     categoryFontSize: '',
   };
-  console.log(cardView);
 
   //임의로 넘어온 정보 구조분해 할당
   // const { imgUrl, createdAt, title, category } = cardData
