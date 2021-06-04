@@ -16,11 +16,11 @@ function Middle() {
   );
 }
 
-export default Middle;
-
 const MiddleWrap = styled.div`
   margin-top: 1.8rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
+
+export default Middle;

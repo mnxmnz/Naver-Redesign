@@ -16,7 +16,6 @@ function Main() {
   const getMainData = async () => {
     const data = await getMainApi();
     setMainData(data);
-    console.log(data);
   };
 
   //recoil변수에 setter하는 함수는 렌더될 때 한 번 실행

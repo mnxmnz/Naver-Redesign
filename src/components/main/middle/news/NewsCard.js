@@ -4,7 +4,7 @@ import styled from 'styled-components';
 function NewsCard({ index }) {
   return (
     <CardWrap>
-      <img src={require(`../../../../assets/icons/NewsImg_${index}.png`)} alt="" />
+      <img src={require(`../../../../assets/icons/NewsImg_${index}.png`).default} alt="" />
     </CardWrap>
   );
 }
