@@ -10,8 +10,8 @@ function News() {
     <NewsWrap>
       <NewsHeader />
       <NewsList>
-        {index.map(() => {
-          return <NewsCard key={index} index={index} />;
+        {index.map((i, idx) => {
+          return <NewsCard index={i} key={idx} />;
         })}
       </NewsList>
     </NewsWrap>
