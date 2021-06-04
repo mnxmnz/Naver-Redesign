@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import BannerNews from '../../common/BannerNews';
 import NaverSportsLogo from '../../../assets/icons/NaverSportsLogo.svg';
 import ButtonArrowDown from '../../../assets/icons/ButtonArrowDown.svg';
 import IconUser from '../../../assets/icons/IconUser.svg';
@@ -7,15 +8,14 @@ import SearchToggle from '../../../assets/icons/SearchToggle.svg';
 import IconAlarm from '../../../assets/icons/IconAlarm.svg';
 import IconMail from '../../../assets/icons/IconMail.svg';
 import IconGrid from '../../../assets/icons/IconGrid.svg';
-import ImgMainBanner from '../../../assets/icons/ImgMainBanner.svg';
 import ButtonLeft from '../../../assets/icons/ButtonLeft.svg';
 import ButtonRight from '../../../assets/icons/ButtonRight.svg';
-import IconComment from '../../../assets/icons/IconComment.svg';
-import IconLike from '../../../assets/icons/IconLike.svg';
-import IconShared from '../../../assets/icons/IconShared.svg';
-import IconLookup from '../../../assets/icons/IconLookup.svg';
+import { useRecoilValue } from 'recoil';
+import { sportsDataAtom } from '../../../states/atom';
 
 function Header() {
+  const detailData = useRecoilValue(sportsDataAtom);
+
   return (
     <HeaderWrap>
       <div className="header__wrap">
@@ -68,40 +68,7 @@ function Header() {
       <div className="main__wrap">
         <div className="main">
           <img className="main__button" src={ButtonLeft} alt="" />
-          <div className="main__banner">
-            <img className="main__banner--img" src={ImgMainBanner} alt="sample img" />
-            <div className="main__banner--description">
-              <h2>핫뉴스</h2>
-              <h1>
-                SON보다 더한 '양발잡이'가 나타
-                <br />
-                30골 중 '왼발 15골-오른발 15골'
-              </h1>
-              <h3>
-                [스포탈코리아]김희웅 인턴기자=우스만뎀벨라뭐시기 어쩌구 저쩌구 요즈음 자꾸 밤마다
-                배가 아픈데 이건 절대 응가가 아니구 진짜 그 위에 배 아픈거 뭔지 알지.. 알아죠...
-                교수님 과제 멈춰..!!
-              </h3>
-              <div id="icons">
-                <span id="comment">
-                  <img src={IconComment} alt="" />
-                  10
-                </span>
-                <span id="like">
-                  <img src={IconLike} alt="" />
-                  10
-                </span>
-                <span id="shared">
-                  <img src={IconShared} alt="" />
-                  10
-                </span>
-                <span id="lookup">
-                  <img src={IconLookup} alt="" />
-                  1990
-                </span>
-              </div>
-            </div>
-          </div>
+          {detailData && detailData.news && <BannerNews data={detailData.news[0]} />}
           <img className="main__button" src={ButtonRight} alt="" />
         </div>
       </div>
@@ -230,69 +197,6 @@ const HeaderWrap = styled.div`
     &__button {
       width: 5.8rem;
       height: 5.8rem;
-    }
-
-    &__banner {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      margin-right: 2.6rem;
-      margin-left: 2.6rem;
-
-      &--img {
-        width: 54.6rem;
-        height: 33rem;
-        margin-right: 1.5rem;
-      }
-
-      &--description {
-        width: 45.6rem;
-        margin-left: 1.5rem;
-
-        h2 {
-          font-size: 2.4rem;
-          font-weight: bold;
-          color: ${({ theme }) => theme.main.mainNewsBlue};
-          margin-bottom: 1.4rem;
-          letter-spacing: -0.12rem;
-        }
-
-        h1 {
-          font-size: 2.8rem;
-          font-weight: bold;
-          letter-spacing: -0.14rem;
-          margin-bottom: 1.7rem;
-          line-height: 2.8rem;
-        }
-
-        h3 {
-          font-size: 1.6rem;
-          letter-spacing: -0.08rem;
-          line-height: 2.2rem;
-          margin-bottom: 0.9rem;
-        }
-
-        #icons {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          color: #737373;
-        }
-
-        #icons > span {
-          margin-right: 2rem;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          font-size: 1.4rem;
-          letter-spacing: -0.028rem;
-
-          img {
-            margin-right: 0.4rem;
-          }
-        }
-      }
     }
   }
 `;
