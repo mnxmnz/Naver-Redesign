@@ -5,8 +5,8 @@ function Notice() {
   return (
     <NoticeWrap>
       <Title>공지</Title>
-      <Content>ㆍ 스포츠 TV중계 편성 - 5/10(월)~5/17(월)</Content>
-      <Content>ㆍ 티빙에서 유로2020을 생중계합니다.</Content>
+      <Content>ㆍ 스포츠 TV중계 편성 - 6/14(월)~6/21(월)</Content>
+      <Content>ㆍ 티빙에서 유로2021을 생중계합니다.</Content>
     </NoticeWrap>
   );
 }
