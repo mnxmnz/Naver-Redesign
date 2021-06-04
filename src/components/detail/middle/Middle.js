@@ -8,8 +8,8 @@ function Middle() {
 
   return (
     <MiddleWrap>
-      {index.map(() => {
-        return <SubArticle key={index} />;
+      {index.map((i, idx) => {
+        return <SubArticle key={idx} index={i} />;
       })}
       <Notice />
     </MiddleWrap>
