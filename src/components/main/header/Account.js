@@ -33,7 +33,7 @@ function Account() {
           <span>/</span>
           <span id="max">28.0°</span>
         </div>
-        <div className="container__weather--location">가리봉동</div>
+        <div className="container__weather--location">가리봉</div>
       </div>
     </AccountWrap>
   );
