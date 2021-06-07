@@ -22,7 +22,7 @@ function Header() {
   };
 
   const loadPrevNews = () => {
-    if (newsNum == 0) {
+    if (newsNum === 0) {
       setNewsNum(4);
     }
 
