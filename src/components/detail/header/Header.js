@@ -18,12 +18,14 @@ function Header() {
   const [newsNum, setNewsNum] = useState(0);
 
   const loadNextNews = () => {
-    if (newsNum < 5) {
-      setNewsNum(newsNum + 1);
-    }
+    setNewsNum((newsNum + 1) % 5);
   };
 
   const loadPrevNews = () => {
+    if (newsNum == 0) {
+      setNewsNum(4);
+    }
+
     if (newsNum > 0) {
       setNewsNum(newsNum - 1);
     }
