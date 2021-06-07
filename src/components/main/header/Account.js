@@ -53,7 +53,7 @@ const AccountWrap = styled.div`
   .container {
     &__login {
       background-color: ${({ theme }) => theme.main.mainNaver};
-      width: 36.1rem;
+      width: 33.8rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -108,6 +108,7 @@ const AccountWrap = styled.div`
 
     &__weather {
       margin-left: 17rem;
+      margin-right: 3.5rem;
       display: flex;
       flex-direction: row;
       align-items: center;
