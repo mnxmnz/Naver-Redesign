@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import BannerNews from '../../common/BannerNews';
 import NaverSportsLogo from '../../../assets/icons/NaverSportsLogo.svg';
@@ -15,6 +15,21 @@ import { sportsDataAtom } from '../../../states/atom';
 
 function Header() {
   const detailData = useRecoilValue(sportsDataAtom);
+  const [newsNum, setNewsNum] = useState(0);
+
+  const loadNextNews = () => {
+    setNewsNum((newsNum + 1) % 5);
+  };
+
+  const loadPrevNews = () => {
+    if (newsNum === 0) {
+      setNewsNum(4);
+    }
+
+    if (newsNum > 0) {
+      setNewsNum(newsNum - 1);
+    }
+  };
 
   return (
     <HeaderWrap>
@@ -67,9 +82,9 @@ function Header() {
       </div>
       <div className="main__wrap">
         <div className="main">
-          <img className="main__button" src={ButtonLeft} alt="" />
-          {detailData && detailData.news && <BannerNews data={detailData.news[0]} />}
-          <img className="main__button" src={ButtonRight} alt="" />
+          <img className="main__button" src={ButtonLeft} alt="" onClick={loadPrevNews} />
+          {detailData && detailData.news && <BannerNews data={detailData.news[newsNum]} />}
+          <img className="main__button" src={ButtonRight} alt="" onClick={loadNextNews} />
         </div>
       </div>
     </HeaderWrap>
