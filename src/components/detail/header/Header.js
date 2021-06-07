@@ -15,6 +15,11 @@ import { sportsDataAtom } from '../../../states/atom';
 
 function Header() {
   const detailData = useRecoilValue(sportsDataAtom);
+  let newsNum = 0;
+
+  const clickHandler = () => {
+    newsNum += 1;
+  };
 
   return (
     <HeaderWrap>
@@ -68,8 +73,8 @@ function Header() {
       <div className="main__wrap">
         <div className="main">
           <img className="main__button" src={ButtonLeft} alt="" />
-          {detailData && detailData.news && <BannerNews data={detailData.news[0]} />}
-          <img className="main__button" src={ButtonRight} alt="" />
+          {detailData && detailData.news && <BannerNews data={detailData.news[newsNum]} />}
+          <img className="main__button" src={ButtonRight} alt="" onClick={clickHandler} />
         </div>
       </div>
     </HeaderWrap>
