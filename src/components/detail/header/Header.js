@@ -187,7 +187,6 @@ const HeaderWrap = styled.div`
   .top__wrap {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
   }
 
