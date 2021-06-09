@@ -100,7 +100,6 @@ function Header() {
 }
 
 const HeaderWrap = styled.div`
-  width: 100%;
   .header {
     /* header부분 flex제어 */
     &__wrap {
@@ -188,13 +187,13 @@ const HeaderWrap = styled.div`
   .top__wrap {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
   }
 
   .top {
     &__menu {
-      width: 100%;
+      width: 120rem;
       background-color: white;
       font-size: 1.6rem;
       letter-spacing: -0.08rem;
