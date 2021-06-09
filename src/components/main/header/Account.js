@@ -49,6 +49,9 @@ const AccountWrap = styled.div`
   display: flex;
   flex: row;
   border-radius: 0.4rem;
+  @media (max-width: 1200px) {
+    width: 110.4rem;
+  }
 
   .container {
     &__login {
@@ -97,11 +100,17 @@ const AccountWrap = styled.div`
           width: 3.9rem;
           height: 3.9rem;
           margin-left: 2.7rem;
+          @media (max-width: 1200px) {
+            margin-left: 1.9rem;
+          }
         }
 
         span {
           word-spacing: 0.9rem;
           margin-right: 4rem;
+          @media (max-width: 1200px) {
+            margin-right: 3.2rem;
+          }
         }
       }
     }
@@ -114,6 +123,9 @@ const AccountWrap = styled.div`
       align-items: center;
       font-size: 1.6rem;
       letter-spacing: -0.08rem;
+      @media (max-width: 1200px) {
+        margin-left: 9.8rem;
+      }
 
       &--summary {
         display: flex;

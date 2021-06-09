@@ -49,16 +49,22 @@ const BannerNewsWrap = styled.div`
     justify-content: space-between;
     margin-right: 2.6rem;
     margin-left: 2.6rem;
+    @media (max-width: 1200px) {
+      margin-left: 1.2rem;
+      margin-right: 0.7rem;
+    }
 
     &__image {
       width: 54.6rem;
       height: 33rem;
-      margin-right: 1.5rem;
+      margin-right: 3rem;
+      @media (max-width: 1200px) {
+        margin-right: 2.2rem;
+      }
     }
 
     &__description {
       width: 45.6rem;
-      margin-left: 1.5rem;
 
       h2 {
         font-size: 2.4rem;
