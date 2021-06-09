@@ -100,6 +100,7 @@ function Header() {
 }
 
 const HeaderWrap = styled.div`
+  width: 100%;
   .header {
     /* header부분 flex제어 */
     &__wrap {
@@ -109,7 +110,8 @@ const HeaderWrap = styled.div`
       width: 100%;
     }
     &__bar {
-      width: 118.9rem;
+      width: 120rem;
+      margin-right: 1.1rem;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -192,7 +194,7 @@ const HeaderWrap = styled.div`
 
   .top {
     &__menu {
-      width: 118.9rem;
+      width: 100%;
       background-color: white;
       font-size: 1.6rem;
       letter-spacing: -0.08rem;
@@ -236,7 +238,6 @@ const HeaderWrap = styled.div`
     background-color: ${({ theme }) => theme.background.sportsBannerBg};
     display: flex;
     justify-content: center;
-    /* width: 120rem; */
     height: 40.8rem;
     align-items: center;
     @media (max-width: 1200px) {
