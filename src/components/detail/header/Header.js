@@ -8,12 +8,15 @@ import SearchToggle from '../../../assets/icons/SearchToggle.svg';
 import IconAlarm from '../../../assets/icons/IconAlarm.svg';
 import IconMail from '../../../assets/icons/IconMail.svg';
 import IconGrid from '../../../assets/icons/IconGrid.svg';
+import HamburgerWhite from '../../../assets/icons/HamburgerWhite.svg';
 import ButtonLeft from '../../../assets/icons/ButtonLeft.svg';
 import ButtonRight from '../../../assets/icons/ButtonRight.svg';
+import { useHistory } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { sportsDataAtom } from '../../../states/atom';
 
 function Header() {
+  const history = useHistory();
   const detailData = useRecoilValue(sportsDataAtom);
   const [newsNum, setNewsNum] = useState(0);
 
@@ -31,11 +34,15 @@ function Header() {
     }
   };
 
+  const clickHandler = () => {
+    history.push('/');
+  };
+
   return (
     <HeaderWrap>
       <div className="header__wrap">
         <div className="header__bar">
-          <img className="header__bar--logo" src={NaverSportsLogo} alt="" />
+          <img className="header__bar--logo" src={NaverSportsLogo} alt="" onClick={clickHandler} />
           <div className="header__bar--menu">
             <span id="bold">카페</span>
             <span id="bold">블로그</span>
@@ -54,6 +61,7 @@ function Header() {
               <img id="icons" src={IconAlarm} alt="" />
               <img id="icons" src={IconMail} alt="" />
               <img id="icons" src={IconGrid} alt="" />
+              <img id="tablet" src={HamburgerWhite} alt="" />
             </span>
           </div>
         </div>
@@ -80,12 +88,12 @@ function Header() {
           </div>
         </div>
       </div>
-      <div className="main__wrap">
-        <div className="main">
-          <img className="main__button" src={ButtonLeft} alt="" onClick={loadPrevNews} />
-          {detailData && detailData.news && <BannerNews data={detailData.news[newsNum]} />}
-          <img className="main__button" src={ButtonRight} alt="" onClick={loadNextNews} />
-        </div>
+      <div className="main">
+        <img className="main__button" id="left" src={ButtonLeft} alt="" onClick={loadPrevNews} />
+        {detailData && detailData.news && (
+          <BannerNews className="main__image" data={detailData.news[newsNum]} />
+        )}
+        <img className="main__button" id="right" src={ButtonRight} alt="" onClick={loadNextNews} />
       </div>
     </HeaderWrap>
   );
@@ -98,9 +106,11 @@ const HeaderWrap = styled.div`
       background-color: ${({ theme }) => theme.main.mainNewsBlue};
       display: flex;
       justify-content: center;
+      width: 100%;
     }
     &__bar {
-      width: 118.9rem;
+      width: 120rem;
+      margin-right: 1.1rem;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -109,10 +119,17 @@ const HeaderWrap = styled.div`
       font-size: 1.6rem;
       letter-spacing: -0.08rem;
       color: ${({ theme }) => theme.main.mainNaverLightgray};
+      @media (max-width: 1200px) {
+        margin-right: 3.6rem;
+      }
 
       &--logo {
         width: 25.8rem;
         height: 7.4rem;
+        cursor: pointer;
+        @media (max-width: 1200px) {
+          margin-left: 4.1rem;
+        }
       }
 
       &--menu {
@@ -124,6 +141,9 @@ const HeaderWrap = styled.div`
           align-items: center;
           margin-left: 1.8rem;
           letter-spacing: -0.09rem;
+          @media (max-width: 1200px) {
+            margin-left: 1.254rem;
+          }
         }
 
         #etc--button {
@@ -147,6 +167,18 @@ const HeaderWrap = styled.div`
         #icons {
           width: 3.8rem;
           height: 3.8rem;
+          @media (max-width: 1200px) {
+            display: none;
+          }
+        }
+
+        #tablet {
+          display: none;
+          @media (max-width: 1200px) {
+            display: initial;
+            width: 3.8rem;
+            height: 3.9rem;
+          }
         }
       }
     }
@@ -155,13 +187,12 @@ const HeaderWrap = styled.div`
   .top__wrap {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
   }
 
   .top {
     &__menu {
-      width: 118.9rem;
+      width: 120rem;
       background-color: white;
       font-size: 1.6rem;
       letter-spacing: -0.08rem;
@@ -171,6 +202,9 @@ const HeaderWrap = styled.div`
       align-items: center;
 
       &--front {
+        @media (max-width: 1200px) {
+          margin-left: 6.1rem;
+        }
         span {
           margin-left: 2rem;
           padding-bottom: 0.9rem;
@@ -198,20 +232,31 @@ const HeaderWrap = styled.div`
     }
   }
   /* main부분 flex제어 */
-  .main__wrap {
+  .main {
     background-color: ${({ theme }) => theme.background.sportsBannerBg};
     display: flex;
     justify-content: center;
-  }
-
-  .main {
     height: 40.8rem;
-    display: flex;
     align-items: center;
+    @media (max-width: 1200px) {
+      height: 42.9rem;
+    }
 
     &__button {
       width: 5.8rem;
       height: 5.8rem;
+      cursor: pointer;
+      #left {
+        margin-left: 10rem;
+      }
+      @media (max-width: 1200px) {
+        #left {
+          margin-left: 2.05rem;
+        }
+        #right {
+          margin-right: 2.05rem;
+        }
+      }
     }
   }
 `;

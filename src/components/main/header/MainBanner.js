@@ -26,5 +26,11 @@ const MainBannerWrap = styled.div`
     width: 71.5rem;
     height: 25.8rem;
     margin-top: 9.2rem;
+    margin-bottom: 16.2rem;
+    @media (max-width: 1200px) {
+      height: 28.4rem;
+      margin-top: 15rem;
+      margin-bottom: 21.8rem;
+    }
   }
 `;
