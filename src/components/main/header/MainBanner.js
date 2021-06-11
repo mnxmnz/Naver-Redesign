@@ -16,7 +16,6 @@ export default MainBanner;
 
 const MainBannerWrap = styled.div`
   background-color: ${({ theme }) => theme.searchBanner.searchBg};
-  height: 58rem;
   width: 100%;
   display: flex;
   flex-direction: column;

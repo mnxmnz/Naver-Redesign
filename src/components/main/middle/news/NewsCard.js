@@ -16,6 +16,11 @@ const CardWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1200px) {
+    width: 27.6rem;
+    height: 10.4rem;
+  }
 `;
 
 export default NewsCard;

@@ -19,6 +19,10 @@ const NoticeWrap = styled.div`
   align-items: center;
   border: 1px solid #e0e3e7;
   background: ${({ theme }) => theme.background.sportsBannerBg};
+
+  @media (max-width: 1200px) {
+    width: 110.5rem;
+  }
 `;
 
 const Title = styled.div`
