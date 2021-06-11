@@ -34,6 +34,10 @@ const HeaderWrap = styled.div`
   width: 120rem;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 1200px) {
+    width: 110.4rem;
+  }
 `;
 
 const NewsText = styled.div`

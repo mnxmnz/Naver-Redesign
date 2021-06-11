@@ -29,6 +29,10 @@ const SubArticleWrap = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 4.2rem;
+
+  @media (max-width: 1200px) {
+    width: 110.4rem;
+  }
 `;
 
 const Photo = styled.img`

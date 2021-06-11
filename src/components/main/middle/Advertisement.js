@@ -23,6 +23,17 @@ const AdvertisementWrap = styled.div`
     height: 21.8rem;
     object-fit: cover;
   }
+
+  @media (max-width: 1200px) {
+    width: 110.4rem;
+    height: 20rem;
+    margin-top: 8rem;
+
+    img {
+      width: 110.4rem;
+      height: 20rem;
+    }
+  }
 `;
 
 export default Advertisement;
