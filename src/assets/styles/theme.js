@@ -24,11 +24,28 @@ const main = {
   mainNaverLightgray: '#E0E3E7;',
 };
 
+const pcPadding = {
+  detail: '18.8vw;',
+};
+
+const tabletPadding = {
+  detailHeader: '1.9vw;',
+  detailMiddle: '4vw;',
+  detailFooter: '4vw;',
+};
+
+const box = {
+  boxBg: '#F8F9FB',
+};
+
 const theme = {
   searchBanner,
   background,
   text,
   main,
+  pcPadding,
+  tabletPadding,
+  box,
 };
 
 export default theme;
